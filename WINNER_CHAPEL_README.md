@@ -59,35 +59,6 @@ winner-chapel-website/
 - A modern web browser (Chrome, Firefox, Safari, Edge)
 - Supabase account (for backend setup)
 
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/winner-chapel-website.git
-   cd winner-chapel-website
-   ```
-
-2. **Set up Supabase**
-   - Create a Supabase project at [supabase.com](https://supabase.com)
-   - Create two tables:
-     - `events` (id, title, description, date, time, capacity, created_at)
-     - `registrations` (id, event_id, user_name, user_email, registered_at)
-   - Copy your Supabase URL and API key
-
-3. **Configure Supabase credentials**
-   - Open `js/supabase-config.js`
-   - Replace with your Supabase URL and API key:
-     ```javascript
-     const SUPABASE_URL = "your-supabase-url";
-     const SUPABASE_KEY = "your-api-key";
-     ```
-
-4. **Open in browser**
-   - For local testing: `python -m http.server` or use Live Server extension in VS Code
-   - For production: Deploy to GitHub Pages (see below)
-
-## 🌐 Deployment
-
 ### Deploy to GitHub Pages
 
 1. Push your code to GitHub:
@@ -102,7 +73,7 @@ winner-chapel-website/
    - Select **main** branch as source
    - Save
 
-3. Your site will be live at: `https://YOUR_USERNAME.github.io/winner-chapel-website`
+3. Your site will be live at: `https://alowakin.github.io/ChurchProject`
 
 ### Deploy to Vercel (Alternative)
 
@@ -110,7 +81,7 @@ winner-chapel-website/
 2. Vercel automatically deploys on every push
 3. Get a URL like: `winner-chapel.vercel.app`
 
-## 📱 Responsive Design
+## Responsive Design
 
 - **Mobile-first approach** using Bootstrap/Tailwind
 - Fully responsive on:
@@ -119,14 +90,14 @@ winner-chapel-website/
   - Desktops (1024px and up)
 - Touch-friendly buttons and forms
 
-## 🔐 Security Considerations
+## Security Considerations
 
 - Admin credentials stored securely via Supabase Authentication
 - Environment variables kept in `.gitignore` (API keys not committed)
 - Form validation on both client and server side
 - SQL injection protection through Supabase parameterized queries
 
-## 🎨 Customization
+## Customization
 
 ### Change Colors/Styling
 - Edit `css/styles.css` to customize the chapel branding
@@ -157,7 +128,7 @@ winner-chapel-website/
 4. Can view registered users per event
 5. Real-time updates across the platform
 
-## 🧪 Testing
+## Testing
 
 ### Manual Testing Checklist
 - [ ] Home page loads correctly
@@ -169,7 +140,7 @@ winner-chapel-website/
 - [ ] Mobile responsive on phone/tablet
 - [ ] All links navigate correctly
 
-## 📝 Future Enhancements
+## Future Enhancements
 
 - [ ] Email notifications for event registrations
 - [ ] Event categories/filtering
@@ -179,24 +150,23 @@ winner-chapel-website/
 - [ ] Social media sharing
 - [ ] Multi-language support
 
-## 🤝 Contributing
+## Contributing
 
 This is a portfolio project. For suggestions or improvements, feel free to open an issue or contact the developer.
 
-## 📄 License
+##  License
 
 This project is open source under the MIT License. See LICENSE file for details.
 
 ## 👨‍💻 Developer
 
 **Isaac** - Full-stack developer based in Omaha, NE
-- GitHub: [YOUR_GITHUB_USERNAME](https://github.com/YOUR_USERNAME)
-- Portfolio: [Your Portfolio Site]
-- LinkedIn: [Your LinkedIn]
+- GitHub: [YOUR_GITHUB_USERNAME](https://github.com/alowakin)
+- LinkedIn: https://www.linkedin.com/in/isaac-dossavou-1970b8191
 
 ---
 
-## 🙏 About Winner Chapel
+## About Winner Chapel
 
 Winner Chapel is [add a brief mission statement or description about the chapel].
 
