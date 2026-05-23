@@ -4,98 +4,12 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>House Fellowship — Winner Chapel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../shared.css"/>
   <style>
-    /* ── FONTS ── */
-h1,h2,h3,h4,.nav-logo-text,.section-title,.footer-logo,.event-title,.group-name,.payment-name,.module-title{font-family:'Playfair Display',serif}
-
-    /* ── DOUBLE NAV ── */
-    .nav-wrapper{position:fixed;top:0;left:0;right:0;z-index:100}
-    .nav-top{background:#f0ebe2;border-bottom:1px solid #e2d9ce;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:36px}
-    .nav-top-address{font-size:.68rem;letter-spacing:.04em;color:#888}
-    .nav-top-links{display:flex;gap:1.8rem;list-style:none}
-    .nav-top-links a{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#555;text-decoration:none;transition:color .2s}
-    .nav-top-links a:hover{color:#8B0000}
-    nav{background:rgba(255,255,255,.98);border-bottom:1px solid #e2d9ce;box-shadow:0 2px 14px rgba(0,0,0,.06);display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:68px}
-    .nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none}
-    .nav-logo img{height:42px;width:auto}
-    .nav-logo-text{font-size:1rem;font-weight:700;letter-spacing:.02em;color:#2c2c2c;line-height:1.2}
-    .nav-logo-text span{color:#8B0000}
-    .nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
-    .nav-links a{font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#555;text-decoration:none;transition:color .22s;position:relative}
-    .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:#8B0000;transition:width .3s}
-    .nav-links a:hover,.nav-links a.active{color:#8B0000}
-    .nav-links a:hover::after,.nav-links a.active::after{width:100%}
-    .nav-cta{background:#8B0000!important;color:#fff!important;padding:.48rem 1.3rem;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;transition:background .22s}
-    .nav-cta:hover{background:#B22222!important} .nav-cta::after{display:none!important}
-
-    /* ── SOCIAL FIXED ── */
-    .social-fixed{position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;display:flex;flex-direction:column;gap:.4rem}
-    .sf-btn{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;text-decoration:none;box-shadow:0 3px 10px rgba(0,0,0,.2);transition:transform .22s,opacity .22s;opacity:.88}
-    .sf-btn:hover{transform:scale(1.12);opacity:1}
-    .sf-btn svg{width:18px;height:18px;fill:#fff}
-    .sf-facebook{background:#1877F2}
-    .sf-instagram{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285AEB 90%)}
-    .sf-youtube{background:#FF0000}
-    .sf-tiktok{background:#010101}
-    .sf-twitter{background:#000}
-    .sf-email{background:#8B0000}
-
-    /* ── HAMBURGER ── */
-    .hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;cursor:pointer;background:none;border:none;padding:6px;z-index:201}
-    .hamburger span{display:block;width:24px;height:2px;background:#2c2c2c;border-radius:1px;transition:all .3s}
-    .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-    .hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
-    .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-
-     /* ── FOOTER ── */
-    footer{background:#2c2222;color:rgba(255,255,255,.6);padding:4rem 2rem 2rem}
-    .footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem}
-    .footer-brand .logo{font-family:'Cinzel',serif;font-size:1.2rem;font-weight:700;color:#fff} .footer-brand .logo span{color:#e87070}
-    .footer-brand p{margin-top:.9rem;font-size:.8rem;font-weight:300;line-height:1.8;color:rgba(255,255,255,.45)}
-    .footer-col h4{font-family:'Cinzel',serif;font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#c9a46a;margin-bottom:1.1rem}
-    .footer-col ul{list-style:none} .footer-col ul li{margin-bottom:.55rem}
-    .footer-col ul li a{font-size:.8rem;color:rgba(255,255,255,.45);text-decoration:none;transition:color .22s}
-    .footer-col ul li a:hover{color:#e87070}
-    .footer-bottom{max-width:1100px;margin:2.5rem auto 0;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;font-size:.73rem;color:rgba(255,255,255,.22)}
-
-    /* ── MOBILE MENU ── */
-    .mobile-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:150}
-    .mobile-overlay.open{display:block}
-    .mobile-panel{position:fixed;top:0;right:0;width:min(300px,85vw);height:100%;background:#fff;z-index:160;padding:90px 2rem 2rem;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);box-shadow:-4px 0 24px rgba(0,0,0,.15);overflow-y:auto}
-    .mobile-panel.open{transform:translateX(0)}
-    .mobile-panel a{font-size:.88rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#2c2c2c;text-decoration:none;padding:1rem 0;border-bottom:1px solid #e2d9ce;transition:color .2s;display:block}
-    .mobile-panel a:hover{color:#8B0000}
-    .mobile-cta-link{margin-top:1.5rem;background:#8B0000;color:#fff!important;text-align:center;padding:1rem!important;border:none!important}
-    .mobile-cta-link:hover{background:#B22222!important}
-    .mobile-address{font-size:.75rem;color:#888;margin-top:auto;padding-top:1.5rem;border-top:1px solid #e2d9ce;line-height:1.8}
-    @media(max-width:900px){
-      .nav-top{display:none}
-      nav{padding:0 1.2rem}
-      .nav-links{display:none}
-      .hamburger{display:flex}
-      .social-fixed{bottom:1rem;right:.8rem}
-    }
-
-    :root{--red:#8B0000;--red-bright:#B22222;--red-light:#f9f0f0;--cream:#faf7f2;--cream-dark:#f0ebe2;--white:#ffffff;--text:#2c2c2c;--text-mid:#555555;--text-light:#888888;--border:#e2d9ce;--gold:#9a7635}
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;padding-top:104px}
-
-    .page-hero{padding-top:0;height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;background:linear-gradient(170deg,var(--cream) 0%,var(--cream-dark) 100%);border-bottom:1px solid var(--border)}
+    body{padding-top:104px}
     .page-hero::before{content:'FELLOWSHIP';position:absolute;font-family:'Playfair Display',serif;font-size:10rem;font-weight:900;color:rgba(139,0,0,.04);letter-spacing:.05em;bottom:-1.5rem;pointer-events:none;white-space:nowrap}
-    .page-hero .eyebrow{font-size:.65rem;font-weight:600;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem}
-    .page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.8rem);font-weight:900;color:var(--text)} .page-hero h1 span{color:var(--red)}
-    .page-hero p{margin-top:.8rem;font-size:.88rem;color:var(--text-mid);max-width:480px}
-    .breadcrumb{margin-top:.8rem;font-size:.73rem;color:var(--text-light)} .breadcrumb a{color:var(--red);text-decoration:none}
-
     .page-body{max-width:1100px;margin:0 auto;padding:5rem 2rem 6rem}
-
-    .section-label{font-size:.63rem;font-weight:600;letter-spacing:.36em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.5rem}
-    .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:var(--text)}
-    .section-title span{color:var(--red)}
-    .section-line{width:45px;height:2px;background:var(--red);margin:1.1rem 0 2.5rem}
-
-    /* What is HF */
     .intro{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-bottom:5rem}
     .intro-text p{font-size:.93rem;color:var(--text-mid);line-height:1.9;margin-bottom:1rem}
     .intro-highlights{display:flex;flex-direction:column;gap:1rem}
@@ -103,13 +17,7 @@ h1,h2,h3,h4,.nav-logo-text,.section-title,.footer-logo,.event-title,.group-name,
     .highlight-item .hi{font-size:1.3rem;flex-shrink:0}
     .highlight-item .ht{font-family:'Playfair Display',serif;font-size:.85rem;font-weight:600;color:var(--text);margin-bottom:.18rem}
     .highlight-item .hd{font-size:.78rem;color:var(--text-mid);line-height:1.6}
-
-    /* Fellowship groups */
     .groups-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2rem;flex-wrap:wrap;gap:1rem}
-    .filter-bar{display:flex;gap:.5rem;flex-wrap:wrap}
-    .filter-btn{background:var(--white);border:1.5px solid var(--border);color:var(--text-mid);padding:.38rem 1rem;font-family:'Inter',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:all .22s}
-    .filter-btn:hover,.filter-btn.active{background:var(--red);border-color:var(--red);color:#fff}
-
     .groups-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:1.4rem;margin-bottom:5rem}
     .group-card{background:var(--white);border:1px solid var(--border);overflow:hidden;transition:transform .28s,box-shadow .28s;animation:fadeUp .4s ease both}
     .group-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(0,0,0,.08)}
@@ -126,33 +34,12 @@ h1,h2,h3,h4,.nav-logo-text,.section-title,.footer-logo,.event-title,.group-name,
     .group-spots span{color:var(--red);font-weight:600}
     .btn-join{width:100%;background:transparent;border:1.5px solid var(--red);color:var(--red);padding:.5rem;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;cursor:pointer;transition:all .22s}
     .btn-join:hover{background:var(--red);color:#fff}
-
-    /* Join form */
     .join-section{background:var(--white);border:1px solid var(--border);padding:3rem;position:relative;overflow:hidden;max-width:680px;margin:0 auto}
     .join-section::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--red)}
     .join-section h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:.4rem} .join-section h3 span{color:var(--red)}
     .join-section p{font-size:.82rem;color:var(--text-mid);margin-bottom:2rem;line-height:1.7}
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-    .form-group{margin-bottom:1rem}
-    .form-group label{display:block;font-size:.63rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.38rem}
-    .form-group input,.form-group select,.form-group textarea{width:100%;background:var(--cream);border:1.5px solid var(--border);color:var(--text);padding:.62rem .88rem;font-family:'Inter',sans-serif;font-size:.82rem;outline:none;transition:border-color .22s;appearance:none}
-    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--red);background:var(--white)}
-    .form-group select option{background:#fff} .form-group textarea{resize:vertical;min-height:80px}
-    .btn-submit{width:100%;background:var(--red);color:#fff;border:none;padding:.82rem;font-family:'Inter',sans-serif;font-size:.76rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:background .22s;margin-top:.5rem}
-    .btn-submit:hover{background:var(--red-bright)}
-    .form-success{display:none;text-align:center;padding:2rem}
-    .form-success .check{font-size:2.5rem;margin-bottom:.8rem}
-    .form-success h4{font-family:'Playfair Display',serif;font-size:1rem;margin-bottom:.5rem} .form-success h4 span{color:var(--red)}
-    .form-success p{font-size:.82rem;color:var(--text-mid);line-height:1.7}
-
-    footer{background:#2c2222;color:rgba(255,255,255,.6);padding:3rem 2rem 1.5rem;text-align:center}
-    .footer-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff} .footer-logo span{color:#e87070}
-    footer p{font-size:.73rem;color:rgba(255,255,255,.3);margin-top:.8rem}
-
-    @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-    @media(max-width:768px){.intro{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}}
+    @media(max-width:768px){.intro{grid-template-columns:1fr}}
   </style>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet"/>
 </head>
 <body>
 <!-- DOUBLE NAV -->
